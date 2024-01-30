@@ -1,0 +1,45 @@
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+  "name": "Product 1",
+  "description": "Product 1 description",
+  "image_url": "https://via.placeholder.com/150",
+  "price": 100
+}
+
+###
+GET http://localhost:3000/products
+
+###
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MDY2Mjk3NzMsImV4cCI6MTcwNjYyOTgzM30.eIQT-Ys_4SFnBaVlSTuvv2VC2VCRmJSlx-rillhNUUM
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MDY2MzE4MTgsImV4cCI6MTcwNjYzMTg3OH0.4I_BLKOgUir2dwnX8I25RrPBvCPIpS3jFOloI7Dx0wg
+
+{
+  "items": [
+    {
+      "product_id": "1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
+      "quantity": 1
+    },
+    {
+      "product_id": "2b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed",
+      "quantity": 1
+    }
+  ],
+  "card_hash": "123"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
